@@ -56,8 +56,7 @@ app.post('/api/login', async (req, res) => {
       return res.status(403).json({ error: 'Access denied. Only admins can log in.' });
     }
 
-    // You might also want to check password here if it’s hashed in DB (e.g., bcrypt.compare)
-    // For example: if (!await bcrypt.compare(password, user.password)) { ... }
+ 
 
     const token = jwt.sign(
       { id: user.id, username: user.username, role: user.role },
